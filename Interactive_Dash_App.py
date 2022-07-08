@@ -5,11 +5,9 @@ import dash_core_components as dcc
 from dash.dependencies import Input, Output
 import plotly.express as px
 
-
 spacex_df = pd.read_csv("spacex_launch_dash.csv")
 max_payload = spacex_df['Payload Mass (kg)'].max()
 min_payload = spacex_df['Payload Mass (kg)'].min()
-
 
 app = dash.Dash(__name__)
 server = app.server
@@ -20,12 +18,9 @@ lsites.append({'label': 'All Sites', 'value': 'All Sites'})
 for site in uniquelaunchsites:
  lsites.append({'label': site, 'value': site})
 
-
-
 app.layout = html.Div(children=[html.H1('SpaceX Launch Records Dashboard',
                                         style={'textAlign': 'center', 'color': '#503D36',
                                                'font-size': 40}),
-
 
 
 
